@@ -6,7 +6,11 @@ class RevealingReferenes
   end
 
   def diameters
-    wheels.collect { |wheel| wheel.rim + (wheel.tire * 2) }
+    wheels.collect { |wheel| diramiter(wheel) }
+  end
+
+  def diramiter(wheel)
+    wheel.rim + (wheel.tire * 2)
   end
 
   Wheel = Struct.new(:rim, :tire)
